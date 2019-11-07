@@ -3,8 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.25.0",
+    "babel-jest": "^24.9.0",
+    "faker": "^4.1.0",
+    "immutability-helper": "^3.0.1",
     "react": "^16.11.0",
+    "react-dnd": "^9.4.0",
+    "react-dnd-html5-backend": "^9.4.0",
     "react-dom": "^16.11.0",
+    "react-frame-component": "^4.1.1",
     "react-scripts": "3.2.0"
   },
   "scripts": {
