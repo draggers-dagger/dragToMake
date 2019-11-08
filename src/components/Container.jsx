@@ -4,7 +4,7 @@ import ItemTypes from './ItemTypes'
 import Box from './Box'
 import Button1 from './Button'
 import update from 'immutability-helper'
-import {Button, Card, DatePicker} from 'antd'
+import { Button, Card, DatePicker } from 'antd'
 
 const styles = {
   width: 1500,
@@ -19,9 +19,16 @@ const Container = ({ hideSourceOnDrag }) => {
     c: { top: 160, left: 30, title: <Button>haha</Button> },
   })
 
+  const [boxesArray, setBoxesFunc] = useState([
+    { id: 'a', top: 10, left: 0, title: 'Drag me around' },
+    { id: 'b', top: 20, left: 20, title: <DatePicker /> },
+    { id: 'c', top: 220, left: 30, title: <Button>haha</Button> },
+  ])
+
   const [, drop] = useDrop({
     accept: [ItemTypes.BOX, ItemTypes.BUTTON],
     drop(item, monitor) {
+      console.log(item, "itemmmm")
       const delta = monitor.getDifferenceFromInitialOffset()
       const left = Math.round(item.left + delta.x)
       const top = Math.round(item.top + delta.y)
@@ -30,26 +37,59 @@ const Container = ({ hideSourceOnDrag }) => {
     },
   })
 
-  const moveBox = (id, left, top) => {
+  const moveBox = async (id, left, top) => {
     console.log(id, left, top, "boxess")
-    setBoxes(
-      update(boxes, {
-        [id]: {
-          $merge: { left, top },
-        },
-      }),
+    var objIndex = boxesArray.findIndex((obj => obj.id == id));
+    // boxesArray[objIndex].left = left
+    // boxesArray[objIndex].top = top
+    // console.log(boxesArray, "arrray")
+    console.log(
+      update(boxesArray, {
+        [objIndex]: {
+          left: { $set: left },
+          top: { $set: top }
+        }
+      })
     )
-  }
+    setBoxesFunc(
+      update(boxesArray, {
+        [objIndex]: {
+          left: { $set: left },
+          top: { $set: top }
+        }
+      }))
+    // setBoxes(
+    //   update(boxes, {
+    //     [id]: {
+    //       $merge: { left, top },
+    //     },
+    //   }),
+    // )
 
-  console.log(boxes, "boxess")
+  }
+  console.log(boxesArray, "objectt")
   return (
     <div ref={drop} style={styles}>
-      {Object.keys(boxes).map(key => {
+      {/* {Object.keys(boxes).map(key => {
         const { left, top, title } = boxes[key]
         return (
           <Box
             key={key}
             id={key}
+            left={left}
+            top={top}
+            hideSourceOnDrag={hideSourceOnDrag}
+          >
+            {title}
+          </Box>
+        )
+      })} */}
+      {boxesArray.map((item, i) => {
+        const { left, top, title } = item
+        return (
+          <Box
+            key={item.id}
+            id={item.id}
             left={left}
             top={top}
             hideSourceOnDrag={hideSourceOnDrag}
