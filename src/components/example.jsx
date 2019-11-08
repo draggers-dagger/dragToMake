@@ -8,17 +8,6 @@ export default function DragAroundNaive() {
   return (
     <div>
       <Container hideSourceOnDrag={hideSourceOnDrag} />
-      <p>
-        <label htmlFor="hideSourceOnDrag">
-          <input
-            id="hideSourceOnDrag"
-            type="checkbox"
-            checked={hideSourceOnDrag}
-            onChange={toggle}
-          />
-          <small>Hide the source item while dragging</small>
-        </label>
-      </p>
     </div>
   )
 }

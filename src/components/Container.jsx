@@ -7,12 +7,13 @@ import update from 'immutability-helper'
 import {Button, Card, DatePicker} from 'antd'
 
 const styles = {
-  width: 1500,
-  height: 800,
+  top:"5vh",
+  width: "80vw",
+  height: "90vh",
   border: '1px solid black',
   position: 'relative',
 }
-const Container = ({ hideSourceOnDrag }) => {
+const Container = ({ hideSourceOnDrag, ...props }) => {
   const [boxes, setBoxes] = useState({
     a: { top: 0, left: 0, title: 'Drag me around' },
     b: { top: 180, left: 20, title: <DatePicker /> },

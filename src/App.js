@@ -7,6 +7,7 @@ import HTML5Backend from 'react-dnd-html5-backend'
 import Example from './components/example'
 import Example2 from './components/exampl2'
 import WidgetBox from './components/layout/widgetBox'
+import Container from './components/Container'
 // import SexBomb from './components/example'
 
 function App() {
@@ -19,8 +20,7 @@ function App() {
           </div>
           <div style={{ height: "100vh", borderStyle: "solid", borderTop: "none", borderBottom: "none", borderRight: "none", overflow: "scroll" }} className="col-sm-10">
             <DndProvider backend={HTML5Backend}>
-              <Example />
-              {/* <Example2/> */}
+              <Container />
             </DndProvider>
           </div>
         </div>
