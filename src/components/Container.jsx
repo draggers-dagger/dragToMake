@@ -12,7 +12,7 @@ const styles = {
   height: "90vh",
   border: '1px solid black',
   position: 'relative',
-  overflow: 'scroll'
+  overflow:'scroll'
 }
 const Container = ({ ...props }) => {
   const [boxesArray, setBoxesFunc] = useState([
