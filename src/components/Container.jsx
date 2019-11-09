@@ -5,22 +5,15 @@ import Box from './Box'
 import Button1 from './Button'
 import update from 'immutability-helper'
 import { Button, Card, DatePicker } from 'antd'
-import Example  from './e.jsx'
+import Example from './e.jsx'
 const styles = {
-  top:"5vh",
+  top: "5vh",
   width: "80vw",
   height: "90vh",
   border: '1px solid black',
   position: 'relative',
 }
 const Container = ({ ...props }) => {
-  console.log(props)
-  const [boxes, setBoxes] = useState({
-    a: { top: 0, left: 0, title: 'Drag me around' },
-    b: { top: 180, left: 20, title: <DatePicker /> },
-    c: { top: 160, left: 30, title: <Button>haha</Button> },
-  })
-
   const [boxesArray, setBoxesFunc] = useState([
     { id: 'a', top: 10, left: 0, title: 'Drag me around' },
     { id: 'b', top: 20, left: 20, title: <DatePicker /> },
@@ -28,20 +21,15 @@ const Container = ({ ...props }) => {
   ])
 
   useEffect(() => {
-    if(props.widget){
+    if (props.widget) {
       console.log(props.widget, "widgettt")
       const components = {
         component: props.widget
-    };
-    const id = Date.now()
-    setBoxesFunc([...boxesArray,{id:id,top:500,left:500,title:props.widget}])
-    // setStateValues(allowedState);
+      };
+      const id = Date.now()
+      setBoxesFunc([...boxesArray, { id: id, top: 500, left: 500, title: props.widget }])
     }
   }, [props.widget]);
-// if(props.widget) {
-//   console.log("hello")
-//   setBoxesFunc([...boxesArray,{id:props.widget,top:500,left:500,title:<props.widget></props.widget>}])
-// }
 
   const [, drop] = useDrop({
     accept: [ItemTypes.BOX, ItemTypes.BUTTON],
@@ -58,9 +46,6 @@ const Container = ({ ...props }) => {
   const moveBox = async (id, left, top) => {
     console.log(id, left, top, "boxess")
     var objIndex = boxesArray.findIndex((obj => obj.id == id));
-    // boxesArray[objIndex].left = left
-    // boxesArray[objIndex].top = top
-    // console.log(boxesArray, "arrray")
     console.log(
       update(boxesArray, {
         [objIndex]: {
@@ -76,32 +61,11 @@ const Container = ({ ...props }) => {
           top: { $set: top }
         }
       }))
-    // setBoxes(
-    //   update(boxes, {
-    //     [id]: {
-    //       $merge: { left, top },
-    //     },
-    //   }),
-    // )
 
   }
   console.log(boxesArray, "objectt")
   return (
     <div ref={drop} style={styles}>
-      {/* {Object.keys(boxes).map(key => {
-        const { left, top, title } = boxes[key]
-        return (
-          <Box
-            key={key}
-            id={key}
-            left={left}
-            top={top}
-            hideSourceOnDrag={hideSourceOnDrag}
-          >
-            {title}
-          </Box>
-        )
-      })} */}
       {boxesArray.map((item, i) => {
         const { left, top, title } = item
         return (

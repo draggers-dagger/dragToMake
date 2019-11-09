@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { Icon, Button, Tag } from 'antd'
+import Piechart from '../widgets/piechart'
+import Areagraph from '../widgets/Areagraph'
+
 class WidegetBox extends Component {
   addWidget = (component)=>{
     this.props.widget(component)
@@ -31,16 +34,31 @@ class WidegetBox extends Component {
           </div>
           <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
-              <button className="btn btn-dark btn-block">
+              <button onClick={()=>this.addWidget(<Piechart />)} className="btn btn-dark btn-block">
                 <Icon style={{ fontSize: "30px" }} type="pie-chart" /> <br></br>
                 Pie Chart
               </button>
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
-              <button className="btn btn-dark btn-block">
+              <button  className="btn btn-dark btn-block">
                 <Icon style={{ fontSize: "30px" }} type="menu-fold" type="bar-chart" />
                 <br></br>
                 Bar chart
+              </button>
+            </div>
+          </div>
+          <div className="row">
+            <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
+              <button onClick={()=>this.addWidget(<Piechart />)} className="btn btn-dark btn-block">
+                <Icon style={{ fontSize: "30px" }} type="pie-chart" /> <br></br>
+                Area chart
+              </button>
+            </div>
+            <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
+              <button onClick={()=>this.addWidget(<Areagraph />)} className="btn btn-dark btn-block">
+                <Icon style={{ fontSize: "30px" }} type="menu-fold" type="bar-chart" />
+                <br></br>
+                Color Tag
               </button>
             </div>
           </div>
