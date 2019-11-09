@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
-import { Icon, Button, Tag } from 'antd'
+import { Icon, Button } from 'antd'
 import Piechart from '../widgets/piechart'
 import Areagraph from '../widgets/Areagraph'
+import Bargraph from '../widgets/Bargraph'
+import Card from '../widgets/Card'
+import Tag from '../widgets/Tag'
+import Timeline from '../widgets/Timeline'
+import Carousel from '../widgets/Carousel'
+import Navbar from '../widgets/Navbar'
 
 class WidegetBox extends Component {
   addWidget = (component)=>{
@@ -19,13 +25,13 @@ class WidegetBox extends Component {
           </div>
           <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
-              <button onClick={()=>this.addWidget('Example')} className="btn btn-dark btn-block">
+              <button onClick={()=>this.addWidget(<Navbar/>)} className="btn btn-dark btn-block">
                 <icon style={{ fontSize: "30px" }} className="fa fa-navicon" /> <br></br>
                 Nav Bar
               </button>
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
-              <button onClick={()=>this.addWidget(<Tag closable color="magenta">magenta</Tag>)} className="btn btn-dark btn-block">
+              <button onClick={()=>this.addWidget(<Card />)} className="btn btn-dark btn-block">
                 <Icon style={{ fontSize: "30px" }} type="menu-fold" type="idcard" />
                 <br></br>
                 Card
@@ -40,7 +46,7 @@ class WidegetBox extends Component {
               </button>
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
-              <button  className="btn btn-dark btn-block">
+              <button onClick={()=>this.addWidget(<Bargraph />)} className="btn btn-dark btn-block">
                 <Icon style={{ fontSize: "30px" }} type="menu-fold" type="bar-chart" />
                 <br></br>
                 Bar chart
@@ -49,16 +55,32 @@ class WidegetBox extends Component {
           </div>
           <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
-              <button onClick={()=>this.addWidget(<Piechart />)} className="btn btn-dark btn-block">
-                <Icon style={{ fontSize: "30px" }} type="pie-chart" /> <br></br>
-                Area chart
+              <button onClick={()=>this.addWidget(<Areagraph />)} className="btn btn-dark btn-block">
+              <Icon style={{ fontSize: "30px" }} type="dot-chart" />  <br></br>
+                Dot chart
               </button>
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
-              <button onClick={()=>this.addWidget(<Areagraph />)} className="btn btn-dark btn-block">
-                <Icon style={{ fontSize: "30px" }} type="menu-fold" type="bar-chart" />
+              <button onClick={()=>this.addWidget(<Tag />)} className="btn btn-dark btn-block">
+                <Icon style={{ fontSize: "30px" }} type="tag" />
                 <br></br>
                 Color Tag
+              </button>
+            </div>
+          </div>
+          <div className="row">
+            <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
+              <button onClick={()=>this.addWidget(<Timeline />)} className="btn btn-dark btn-block">
+                <icon style={{ fontSize: "30px" }} className="fa fa-briefcase"/>
+                <br></br>
+                Timeline
+              </button>
+            </div>
+            <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
+              <button onClick={()=>this.addWidget(<Carousel/>)} className="btn btn-dark btn-block">
+                <Icon style={{ fontSize: "30px" }}  type="desktop" />
+                <br></br>
+                  Carousel
               </button>
             </div>
           </div>

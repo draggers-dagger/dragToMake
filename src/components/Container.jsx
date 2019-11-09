@@ -12,10 +12,10 @@ const styles = {
   height: "90vh",
   border: '1px solid black',
   position: 'relative',
+  overflow: 'scroll'
 }
 const Container = ({ ...props }) => {
   const [boxesArray, setBoxesFunc] = useState([
-    { id: 'a', top: 10, left: 0, title: 'Drag me around' },
     { id: 'b', top: 20, left: 20, title: <DatePicker /> },
     { id: 'c', top: 220, left: 30, title: <Button>haha</Button> },
   ])
@@ -27,7 +27,7 @@ const Container = ({ ...props }) => {
         component: props.widget
       };
       const id = Date.now()
-      setBoxesFunc([...boxesArray, { id: id, top: 500, left: 500, title: props.widget }])
+      setBoxesFunc([...boxesArray, { id: id, top: 0, left: 0, title: props.widget }])
     }
   }, [props.widget]);
 
@@ -65,20 +65,23 @@ const Container = ({ ...props }) => {
   }
   console.log(boxesArray, "objectt")
   return (
-    <div ref={drop} style={styles}>
-      {boxesArray.map((item, i) => {
-        const { left, top, title } = item
-        return (
-          <Box
-            key={item.id}
-            id={item.id}
-            left={left}
-            top={top}
-          >
-            {title}
-          </Box>
-        )
-      })}
+    <div style={styles}>
+      <div style={{ width: "100%" }} ref={drop} style={{height:"300vh"}}>
+        {boxesArray.map((item, i) => {
+          const { left, top, title } = item
+          return (
+            <Box
+              style={{ width: "100%" }}
+              key={item.id}
+              id={item.id}
+              left={left}
+              top={top}
+            >
+              {title}
+            </Box>
+          )
+        })}
+      </div>
     </div>
   )
 }

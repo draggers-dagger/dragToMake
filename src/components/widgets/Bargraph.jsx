@@ -6,66 +6,29 @@ const ReactHighcharts = require('react-highcharts');
 class Bargraph extends Component {
 
     render() {
-        let configStoreDivison = {
+        let configTopSalePerson = {
             title: {
-                text: 'Top Sales person'
-              },
-          
-              subtitle: {
-                text: 'Sales'
-              },
-          
-              xAxis: {
-                categories: salesmanName
-              },
+              text: 'Top Sales person'
+            },
+        
+            subtitle: {
+              text: 'Sales'
+            },
+        
+            xAxis: {
+              categories: ['ReactJS', 'AngularJS', 'NodeJS', 'AWS']
+            },
+        
             series: [{
-                name: 'Skill Set',
-                type: 'column',
-                colorByPoint: true,
-                data: [
-                    {
-                        name: "NodeJs",
-                        y: 20,
-                    },
-                    {
-                        name: "ReactJs",
-                        y: 15,
-                    },
-                    {
-                        name: "Laravel",
-                        y: 5,
-                    },
-                    {
-                        name: "AngularJs",
-                        y: 10
-                    },
-                    {
-                        name: "Flask",
-                        y: 10
-                    },
-                    {
-                        name: "Mogoose",
-                        y: 10
-                    },
-                    {
-                        name: "Selenium",
-                        y: 10
-                    },
-                    {
-                        name: "ExpressJs",
-                        y: 10
-                    },
-                    {
-                        name: "Animation",
-                        y: 10
-                    },
-
-                ]
+              type: 'column',
+              colorByPoint: true,
+              data: [8, 4, 9, 7],
+              showInLegend: false
             }]
-        }
+          }
         return (
             <React.Fragment>
-                <ReactHighcharts config={configStoreDivison} ref="chart"></ReactHighcharts>
+                <ReactHighcharts config={configTopSalePerson} ref="chart"></ReactHighcharts>
             </React.Fragment>
 
         )

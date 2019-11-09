@@ -5,6 +5,7 @@ const style = {
   position: 'absolute',
   // border: '1px dashed pink',
   // backgroundColor: 'yellow',
+  width:"100%",
   padding: '0.5rem 1rem',
   cursor: 'move',
 }
@@ -16,7 +17,7 @@ const Box = ({ id, left, top, hideSourceOnDrag, children, ...props }) => {
       isDragging: monitor.isDragging(),
     }),
   })
-  if (isDragging && hideSourceOnDrag) {
+  if (isDragging && true) {
     return (
       
       <React.Fragment>
