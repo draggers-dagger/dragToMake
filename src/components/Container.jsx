@@ -29,11 +29,12 @@ const Container = ({ ...props }) => {
 
   useEffect(() => {
     if(props.widget){
+      console.log(props.widget, "widgettt")
       const components = {
         component: props.widget
     };
     const id = Date.now()
-    setBoxesFunc([...boxesArray,{id:id,top:500,left:500,title:<div>hello</div>}])
+    setBoxesFunc([...boxesArray,{id:id,top:500,left:500,title:props.widget}])
     // setStateValues(allowedState);
     }
   }, [props.widget]);
