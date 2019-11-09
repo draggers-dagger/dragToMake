@@ -7,3 +7,6 @@
   width: 0px;  /* Remove scrollbar space */
   background: transparent;  /* Optional: just make scrollbar invisible */
 }
+.highcharts-container {
+  z-index: -1 !important ;
+}
