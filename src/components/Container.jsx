@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDrop } from 'react-dnd'
 import ItemTypes from './ItemTypes'
 import Box from './Box'
 import Button1 from './Button'
 import update from 'immutability-helper'
 import { Button, Card, DatePicker } from 'antd'
-
+import Example  from './e.jsx'
 const styles = {
   top:"5vh",
   width: "80vw",
@@ -13,7 +13,8 @@ const styles = {
   border: '1px solid black',
   position: 'relative',
 }
-const Container = ({ hideSourceOnDrag, ...props }) => {
+const Container = ({ ...props }) => {
+  console.log(props)
   const [boxes, setBoxes] = useState({
     a: { top: 0, left: 0, title: 'Drag me around' },
     b: { top: 180, left: 20, title: <DatePicker /> },
@@ -25,6 +26,21 @@ const Container = ({ hideSourceOnDrag, ...props }) => {
     { id: 'b', top: 20, left: 20, title: <DatePicker /> },
     { id: 'c', top: 220, left: 30, title: <Button>haha</Button> },
   ])
+
+  useEffect(() => {
+    if(props.widget){
+      const components = {
+        component: props.widget
+    };
+    const id = Date.now()
+    setBoxesFunc([...boxesArray,{id:id,top:500,left:500,title:<div>hello</div>}])
+    // setStateValues(allowedState);
+    }
+  }, [props.widget]);
+// if(props.widget) {
+//   console.log("hello")
+//   setBoxesFunc([...boxesArray,{id:props.widget,top:500,left:500,title:<props.widget></props.widget>}])
+// }
 
   const [, drop] = useDrop({
     accept: [ItemTypes.BOX, ItemTypes.BUTTON],
@@ -93,7 +109,6 @@ const Container = ({ hideSourceOnDrag, ...props }) => {
             id={item.id}
             left={left}
             top={top}
-            hideSourceOnDrag={hideSourceOnDrag}
           >
             {title}
           </Box>

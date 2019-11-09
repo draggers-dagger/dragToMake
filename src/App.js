@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import 'antd/dist/antd.css';
 // import logo from './logo.svg';
 import './App.css';
@@ -10,26 +10,37 @@ import WidgetBox from './components/layout/widgetBox'
 import Container from './components/Container'
 // import SexBomb from './components/example'
 
-function App() {
-  return (
-    <div className="App">
-      <div className="container-fluid">
-        <div className="row">
-          <div style={{ backgroundColor: "#f5f5f5", height: "100vh", overflow: "scroll" }} className="col-sm-2">
-            <WidgetBox />
-          </div>
-          <div style={{ height: "100vh", borderStyle: "solid", borderTop: "none", borderBottom: "none", borderRight: "none", overflow: "scroll" }} className="col-sm-10">
-            <DndProvider backend={HTML5Backend}>
-              <Container />
-            </DndProvider>
+class App extends Component {
+  state={
+    widget:null,
+  }
+  handleCurrentWidget = (data)=>{
+    this.setState({
+      Widget:data
+    })
+  }
+  render() {
+    return (
+      <div className="App">
+        <div className="container-fluid">
+          <div className="row">
+
+            <div style={{ backgroundColor: "#f5f5f5", height: "100vh", overflow: "scroll" }} className="col-sm-2">
+              <WidgetBox widget={this.handleCurrentWidget} />
+            </div>
+            <div style={{ height: "100vh", borderStyle: "solid", borderTop: "none", borderBottom: "none", borderRight: "none", overflow: "scroll" }} className="col-sm-10">
+              <DndProvider backend={HTML5Backend}>
+                <Container widget={this.state.Widget} />
+              </DndProvider>
+            </div>
           </div>
         </div>
-      </div>
-      {/* <DndProvider backend={HTML5Backend}>
+        {/* <DndProvider backend={HTML5Backend}>
         <Example />
       </DndProvider> */}
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;
