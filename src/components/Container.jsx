@@ -12,6 +12,7 @@ const styles = {
   height: "90vh",
   border: '1px solid black',
   position: 'relative',
+  overflow:'scroll'
 }
 const Container = ({ ...props }) => {
   console.log(props)
@@ -33,7 +34,7 @@ const Container = ({ ...props }) => {
         component: props.widget
     };
     const id = Date.now()
-    setBoxesFunc([...boxesArray,{id:id,top:500,left:500,title:<div>hello</div>}])
+    setBoxesFunc([...boxesArray,{id:id,top:500,left:500,title:<Example></Example>}])
     // setStateValues(allowedState);
     }
   }, [props.widget]);
