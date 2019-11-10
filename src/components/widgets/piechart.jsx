@@ -77,8 +77,8 @@ class Piechart extends Component {
             }]
         }
         return (
-            <React.Fragment>
-                <ReactHighcharts config={configStoreDivison} ref="chart"></ReactHighcharts>
+            <React.Fragment >
+                <ReactHighcharts style={{width:"50%"}} config={configStoreDivison} ref="chart"></ReactHighcharts>
             </React.Fragment>
 
         )
