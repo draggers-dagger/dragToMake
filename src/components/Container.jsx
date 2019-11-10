@@ -16,18 +16,18 @@ const styles = {
 }
 const Container = ({ ...props }) => {
   const [boxesArray, setBoxesFunc] = useState([
-    { id: 'b', top: 20, left: 20, title: <DatePicker /> },
+    // { id: 'b', top: 20, left: 20, title: <DatePicker /> },
     { id: 'c', top: 220, left: 30, title: <Button>haha</Button> },
   ])
 
   useEffect(() => {
     if (props.widget) {
-      console.log(props.widget, "widgettt")
+      console.log(props.type, "widgettt")
       const components = {
         component: props.widget
       };
       const id = Date.now()
-      setBoxesFunc([...boxesArray, { id: id, top: 0, left: 0, title: props.widget }])
+      setBoxesFunc([...boxesArray, { id: id, top: 0, left: 0, title: props.widget, type: props.type }])
     }
   }, [props.widget]);
 
@@ -63,7 +63,9 @@ const Container = ({ ...props }) => {
       }))
 
   }
-  console.log(boxesArray, "objectt")
+  // var dupData = boxesArray
+  // dupData.forEach(function(v){ delete v.title });
+  console.log((boxesArray), "objectt")
   return (
     <div style={styles}>
       <div style={{ width: "100%" }} ref={drop} style={{height:"300vh"}}>

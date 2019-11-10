@@ -13,10 +13,12 @@ import Container from './components/Container'
 class App extends Component {
   state={
     widget:null,
+    type: null
   }
-  handleCurrentWidget = (data)=>{
+  handleCurrentWidget = (data, type)=>{
     this.setState({
-      Widget:data
+      Widget:data,
+      type: type
     })
   }
   render() {
@@ -30,7 +32,7 @@ class App extends Component {
             </div>
             <div style={{ height: "100vh", borderStyle: "solid", borderTop: "none", borderBottom: "none", borderRight: "none", overflow: "scroll" }} className="col-sm-10">
               <DndProvider backend={HTML5Backend}>
-                <Container widget={this.state.Widget} />
+                <Container type={this.state.type} widget={this.state.Widget} />
               </DndProvider>
             </div>
           </div>

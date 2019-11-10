@@ -10,8 +10,8 @@ import Carousel from '../widgets/Carousel'
 import Navbar from '../widgets/Navbar'
 
 class WidegetBox extends Component {
-  addWidget = (component)=>{
-    this.props.widget(component)
+  addWidget = (component, type)=>{
+    this.props.widget(component, type)
   }
   render() {
     return (
@@ -25,13 +25,13 @@ class WidegetBox extends Component {
           </div>
           <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
-              <button onClick={()=>this.addWidget(<Navbar/>)} className="btn btn-dark btn-block">
+              <button onClick={()=>this.addWidget(<Navbar/>, 'Navbar')} className="btn btn-dark btn-block">
                 <icon style={{ fontSize: "30px" }} className="fa fa-navicon" /> <br></br>
                 Nav Bar
               </button>
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
-              <button onClick={()=>this.addWidget(<Card />)} className="btn btn-dark btn-block">
+              <button onClick={()=>this.addWidget(<Card />, 'Card')} className="btn btn-dark btn-block">
                 <Icon style={{ fontSize: "30px" }} type="menu-fold" type="idcard" />
                 <br></br>
                 Card
@@ -40,13 +40,13 @@ class WidegetBox extends Component {
           </div>
           <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
-              <button onClick={()=>this.addWidget(<Piechart />)} className="btn btn-dark btn-block">
+              <button onClick={()=>this.addWidget(<Piechart />, 'Piechart')} className="btn btn-dark btn-block">
                 <Icon style={{ fontSize: "30px" }} type="pie-chart" /> <br></br>
                 Pie Chart
               </button>
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
-              <button onClick={()=>this.addWidget(<Bargraph />)} className="btn btn-dark btn-block">
+              <button onClick={()=>this.addWidget(<Bargraph />, 'Bargraph')} className="btn btn-dark btn-block">
                 <Icon style={{ fontSize: "30px" }} type="menu-fold" type="bar-chart" />
                 <br></br>
                 Bar chart
@@ -55,13 +55,13 @@ class WidegetBox extends Component {
           </div>
           <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
-              <button onClick={()=>this.addWidget(<Areagraph />)} className="btn btn-dark btn-block">
+              <button onClick={()=>this.addWidget(<Areagraph />, 'Areagraph')} className="btn btn-dark btn-block">
               <Icon style={{ fontSize: "30px" }} type="dot-chart" />  <br></br>
                 Dot chart
               </button>
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
-              <button onClick={()=>this.addWidget(<Tag />)} className="btn btn-dark btn-block">
+              <button onClick={()=>this.addWidget(<Tag />, 'Tag')} className="btn btn-dark btn-block">
                 <Icon style={{ fontSize: "30px" }} type="tag" />
                 <br></br>
                 Color Tag
@@ -70,14 +70,14 @@ class WidegetBox extends Component {
           </div>
           <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
-              <button onClick={()=>this.addWidget(<Timeline />)} className="btn btn-dark btn-block">
+              <button onClick={()=>this.addWidget(<Timeline />, 'Timeline')} className="btn btn-dark btn-block">
                 <icon style={{ fontSize: "30px" }} className="fa fa-briefcase"/>
                 <br></br>
                 Timeline
               </button>
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
-              <button onClick={()=>this.addWidget(<Carousel/>)} className="btn btn-dark btn-block">
+              <button onClick={()=>this.addWidget(<Carousel/>, 'Carousel')} className="btn btn-dark btn-block">
                 <Icon style={{ fontSize: "30px" }}  type="desktop" />
                 <br></br>
                   Carousel
