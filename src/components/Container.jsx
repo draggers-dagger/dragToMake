@@ -18,10 +18,10 @@ const styles = {
 const Container = ({ ...props }) => {
   const [boxesArray, setBoxesFunc] = useState([
     // { id: 'b', top: 20, left: 20, title: <DatePicker /> },
-    { id: 'c', top: 220, left: 30, title: <Button>haha</Button> },
+    // { id: 'c', top: 220, left: 30, title: <Button>haha</Button> },
   ])
 
-  useEffect(() => {
+  useEffect( () => {
     if (props.widget) {
       console.log(props.type, "widgettt")
       const components = {
@@ -31,6 +31,21 @@ const Container = ({ ...props }) => {
       setBoxesFunc([...boxesArray, { id: id, top: 0, left: 0, title: props.widget, type: props.type }])
     }
   }, [props.widget]);
+
+  useEffect( () => {
+    if (boxesArray) {
+      props.handleAllWidget(boxesArray)
+    }
+  }, [boxesArray]);
+
+  useEffect(()=>{
+    if(props.deleteWidget){
+     setBoxesFunc( boxesArray.filter(function(widget) { 
+       console.log(props.deleteWidget.id)
+        return widget.id !== props.deleteWidget.id 
+    }))
+    }
+  },[props.deleteWidget])
 
   const [, drop] = useDrop({
     accept: [ItemTypes.BOX, ItemTypes.BUTTON],
