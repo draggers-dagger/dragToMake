@@ -51,6 +51,13 @@
   top: 1%;
   left: 92%;
 }
+
+.export-btn{
+  position: absolute;
+  top: 1%;
+  left: 86%;
+  /* background-color: #28A745; */
+}
 .box {
   position: fixed;
   left: 79%;

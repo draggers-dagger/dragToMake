@@ -12,7 +12,6 @@ class Console extends Component {
 
     render() {
         return (
-
             <div>
                 <div className="console-btn">
                     <Button data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" type="primary" style={{ padding: "0 40px" }} >
