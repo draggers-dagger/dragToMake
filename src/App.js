@@ -8,18 +8,36 @@ import Example from './components/example'
 import Example2 from './components/exampl2'
 import WidgetBox from './components/layout/widgetBox'
 import Container from './components/Container'
+import Console from './components/layout/console'
 // import SexBomb from './components/example'
 
 class App extends Component {
   state={
     widget:null,
-    type: null
+    type: null,
+    WidgetLength:null,
+    deleteWidget:null
   }
   handleCurrentWidget = (data, type)=>{
     this.setState({
       Widget:data,
       type: type
     })
+  }
+  handleAllWidget = async(data)=>{
+    console.log(data)
+    await this.setState({
+      AllWidget : data,
+      WidgetLength:data.length
+    })
+    console.log(this.state.AllWidget)
+  }
+  handleDeleteWidget =async(data) =>{
+    console.log(data);
+    await this.setState({
+      deleteWidget:data
+    })
+    console.log(this.state.deleteWidget)
   }
   render() {
     return (
@@ -32,7 +50,7 @@ class App extends Component {
             </div>
             <div style={{ height: "100vh", borderStyle: "solid", borderTop: "none", borderBottom: "none", borderRight: "none", overflow: "scroll" }} className="col-sm-10">
               <DndProvider backend={HTML5Backend}>
-                <Container type={this.state.type} widget={this.state.Widget} />
+                <Container deleteWidget={this.state.deleteWidget} type={this.state.type} widget={this.state.Widget} handleAllWidget={this.handleAllWidget} />
               </DndProvider>
             </div>
           </div>
@@ -40,6 +58,7 @@ class App extends Component {
         {/* <DndProvider backend={HTML5Backend}>
         <Example />
       </DndProvider> */}
+      {this.state.WidgetLength && <Console handleDeleteWidget={this.handleDeleteWidget} AllWidget={this.state.AllWidget}/>}
       </div>
     );
   }
