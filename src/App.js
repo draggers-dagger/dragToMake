@@ -11,7 +11,7 @@ import Container from './components/Container'
 import Console from './components/layout/console'
 import Chatbot from './components/layout/chatbot'
 // import SexBomb from './components/example'
-
+import Body from './components/layout/body'
 class App extends Component {
   state={
     widget:null,
@@ -50,9 +50,10 @@ class App extends Component {
               <WidgetBox widget={this.handleCurrentWidget} />
             </div>
             <div style={{ height: "100vh", borderStyle: "solid", borderTop: "none", borderBottom: "none", borderRight: "none", overflow: "scroll" }} className="col-sm-10">
-              <DndProvider backend={HTML5Backend}>
+              {/* <DndProvider backend={HTML5Backend}>
                 <Container deleteWidget={this.state.deleteWidget} type={this.state.type} widget={this.state.Widget} handleAllWidget={this.handleAllWidget} />
-              </DndProvider>
+              </DndProvider> */}
+              <Body deleteWidget={this.state.deleteWidget} type={this.state.type} widget={this.state.Widget} handleAllWidget={this.handleAllWidget}></Body>
             </div>
           </div>
         </div>

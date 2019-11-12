@@ -3,7 +3,7 @@ import { Timeline, Icon } from 'antd';
 
 const Timeline1 = (props) => {
     return (
-        <Timeline mode="alternate">
+        <Timeline style={{ width:"100%" , height:"100%"}} mode="alternate">
             <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
             <Timeline.Item color="green">Solve initial network problems 2015-09-01</Timeline.Item>
             <Timeline.Item dot={<Icon type="clock-circle-o" style={{ fontSize: '16px' }} />}>

@@ -6,7 +6,7 @@ const { Meta } = Card;
 class GoogleFrame extends Component {
 
     render() {
-        var style = { border: "none", overflow: "hidden", position: "relative", zIndex: "-1", width: 1000, height: "450px" }
+        var style = { border: "none", overflow: "hidden", position: "relative", zIndex: "-1", width:"100%", height: "100%" }
         return (
             <React.Fragment>
                 {/* <div > */}

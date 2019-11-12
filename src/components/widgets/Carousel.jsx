@@ -6,22 +6,22 @@ class Slideshow extends Component {
 
     render() {
         return (
-            <React.Fragment>
-                <Carousel autoplay>
-                    <div>
-                        <img width="100%" height="100%" style={{ zIndex: "-1", position: 'relative' }} src="https://i.dell.com/sites/csimages/Banner_Imagery/all/2337-hub-banner-2800x839-Serenity.jpg" ></img>
-                    </div>
-                    <div>
-                        <img width="100%" height="100%" style={{ zIndex: "-1" }} src="https://i.dell.com/sites/csimages/Merchandizing_Imagery/all/2354-g3-code-vein-2800x839.jpg" ></img>
-                    </div>
-                    <div>
-                        <img width="100%" height="100%" style={{ zIndex: "-1" }} src="https://i.dell.com/sites/csimages/Merchandizing_Imagery/all/2361-awaurorar9-2800x839.jpg" ></img>
-                    </div>
-                    {/* <div>
-                        <h3>4</h3>
-                    </div> */}
-                </Carousel>
-            </React.Fragment>
+            // <div style={{height:"100%", width:"100%"}}>
+                <Carousel style={{height:"auto", width:"80vw"}} autoplay>
+    <div>
+      <h3>1</h3>
+    </div>
+    <div>
+      <h3>2</h3>
+    </div>
+    <div>
+      <h3>3</h3>
+    </div>
+    <div>
+      <h3>4</h3>
+    </div>
+  </Carousel>
+            // </div>
 
         )
     }

@@ -7,7 +7,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ height:"100%" ,width:"100%"}}>
         {/* <div className="row">
         <div className="col-12" > */}
         <nav class="navbar navbar-expand-lg navbar-light bg-light">

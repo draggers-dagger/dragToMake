@@ -16,7 +16,7 @@ class Card1 extends Component {
             <React.Fragment>
                 <Card
                     hoverable
-                    style={{ width: 240 }}
+                    style={{ width: "100%" }}
                     cover={<img alt="example" height="250vh" src={rand} />}
                 >
                     <Meta title="Europe Street beat" description="www.instagram.com" />

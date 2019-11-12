@@ -13,6 +13,8 @@
     "react-dom": "^16.11.0",
     "react-frame-component": "^4.1.1",
     "react-highcharts": "^16.1.0",
+    "react-resizable": "^1.9.0",
+    "react-rnd": "^10.1.1",
     "react-scripts": "3.2.0"
   },
   "scripts": {
