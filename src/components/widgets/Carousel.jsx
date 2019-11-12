@@ -9,13 +9,13 @@ class Slideshow extends Component {
             <React.Fragment>
                 <Carousel autoplay>
                     <div>
-                        <img style={{ zIndex: "-1", position: 'relative' }} src="https://i.dell.com/sites/csimages/Banner_Imagery/all/2337-hub-banner-2800x839-Serenity.jpg" ></img>
+                        <img width="100%" height="100%" style={{ zIndex: "-1", position: 'relative' }} src="https://i.dell.com/sites/csimages/Banner_Imagery/all/2337-hub-banner-2800x839-Serenity.jpg" ></img>
                     </div>
                     <div>
-                        <img style={{ zIndex: "-1" }} src="https://i.dell.com/sites/csimages/Merchandizing_Imagery/all/2354-g3-code-vein-2800x839.jpg" ></img>
+                        <img width="100%" height="100%" style={{ zIndex: "-1" }} src="https://i.dell.com/sites/csimages/Merchandizing_Imagery/all/2354-g3-code-vein-2800x839.jpg" ></img>
                     </div>
                     <div>
-                        <img style={{ zIndex: "-1" }} src="https://i.dell.com/sites/csimages/Merchandizing_Imagery/all/2361-awaurorar9-2800x839.jpg" ></img>
+                        <img width="100%" height="100%" style={{ zIndex: "-1" }} src="https://i.dell.com/sites/csimages/Merchandizing_Imagery/all/2361-awaurorar9-2800x839.jpg" ></img>
                     </div>
                     {/* <div>
                         <h3>4</h3>
