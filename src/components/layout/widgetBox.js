@@ -181,7 +181,7 @@ class WidegetBox extends Component {
               </button>
             </div>
           </div>
-          <div className="row">
+          {/* <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
               <button className="btn btn-dark btn-block">
                 <icon style={{ fontSize: "30px" }} className="fa fa-square-o" /> <br></br>
@@ -195,8 +195,8 @@ class WidegetBox extends Component {
                 Card
               </button>
             </div>
-          </div>
-          <div className="row">
+          </div> */}
+          {/* <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
               <button className="btn btn-dark btn-block">
                 <Icon style={{ fontSize: "30px" }} type="menu-fold" /> <br></br>
@@ -210,8 +210,8 @@ class WidegetBox extends Component {
                 Card
               </button>
             </div>
-          </div>
-          <div className="row">
+          </div> */}
+          {/* <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
               <button className="btn btn-dark btn-block">
                 <Icon style={{ fontSize: "30px" }} type="menu-fold" /> <br></br>
@@ -225,7 +225,7 @@ class WidegetBox extends Component {
                 Card
               </button>
             </div>
-          </div>
+          </div> */}
           </div>
     )
   }

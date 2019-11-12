@@ -17,7 +17,7 @@ const styles = {
 const Container = ({ ...props }) => {
   const [boxesArray, setBoxesFunc] = useState([
     // { id: 'b', top: 20, left: 20, title: <DatePicker /> },
-    { id: 'c', top: 220, left: 30, title: <Button>haha</Button> },
+    // { id: 'c', top: 220, left: 30, title: <Button>haha</Button> },
   ])
 
   useEffect(() => {

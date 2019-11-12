@@ -9,17 +9,17 @@ class Slideshow extends Component {
             <React.Fragment>
                 <Carousel autoplay>
                     <div>
-                        <img style={{zIndex: "-1", position: 'relative'}} src="https://images.unsplash.com/photo-1426523038054-a260f3ef5bc9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1932&q=80" ></img>
+                        <img style={{ zIndex: "-1", position: 'relative' }} src="https://i.dell.com/sites/csimages/Banner_Imagery/all/2337-hub-banner-2800x839-Serenity.jpg" ></img>
                     </div>
                     <div>
-                        <h3>2</h3>
+                        <img style={{ zIndex: "-1" }} src="https://i.dell.com/sites/csimages/Merchandizing_Imagery/all/2354-g3-code-vein-2800x839.jpg" ></img>
                     </div>
                     <div>
-                        <h3>3</h3>
+                        <img style={{ zIndex: "-1" }} src="https://i.dell.com/sites/csimages/Merchandizing_Imagery/all/2361-awaurorar9-2800x839.jpg" ></img>
                     </div>
-                    <div>
+                    {/* <div>
                         <h3>4</h3>
-                    </div>
+                    </div> */}
                 </Carousel>
             </React.Fragment>
 
