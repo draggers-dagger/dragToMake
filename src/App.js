@@ -9,6 +9,7 @@ import Example2 from './components/exampl2'
 import WidgetBox from './components/layout/widgetBox'
 import Container from './components/Container'
 import Console from './components/layout/console'
+import Chatbot from './components/layout/chatbot'
 // import SexBomb from './components/example'
 
 class App extends Component {
@@ -59,6 +60,7 @@ class App extends Component {
         <Example />
       </DndProvider> */}
       {this.state.WidgetLength && <Console handleDeleteWidget={this.handleDeleteWidget} AllWidget={this.state.AllWidget}/>}
+        <Chatbot />
       </div>
     );
   }
