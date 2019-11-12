@@ -8,9 +8,15 @@ import Tag from '../widgets/Tag'
 import Timeline from '../widgets/Timeline'
 import Carousel from '../widgets/Carousel'
 import Navbar from '../widgets/Navbar'
-
+import FacebookFrame from '../widgets/Facebook'
+import LinkedInFrame from '../widgets/Linkedin'
+import YoutubeFrame from '../widgets/YouTubeFrame'
+import Footer from '../widgets/Footer'
+import TwitterFrame from '../widgets/Twitter'
+import GoogleFrame from '../widgets/Map'
 class WidegetBox extends Component {
   addWidget = (component, type)=>{
+    console.log(component)
     this.props.widget(component, type)
   }
   render() {
@@ -102,28 +108,28 @@ class WidegetBox extends Component {
           </div>
           <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
-              <button className="btn btn-dark btn-block">
+              <button onClick={()=>this.addWidget(<Footer/>, 'Footer')} className="btn btn-dark btn-block">
                 <Icon style={{ fontSize: "30px" }} type="border" /> <br></br>
                 Footer
               </button>
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
-              <button className="btn btn-dark btn-block">
-                <Icon style={{ fontSize: "30px" }} type="menu-fold" type="google" />
+              <button onClick={()=>this.addWidget(<TwitterFrame/>, 'TwitterFrame')} className="btn btn-dark btn-block">
+                <Icon style={{ fontSize: "30px" }} type="menu-fold" type="twitter" />
                 <br></br>
-                Google
+                Twitter
               </button>
             </div>
           </div>
           <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
-              <button className="btn btn-dark btn-block">
+              <button onClick={()=>this.addWidget(<FacebookFrame />, 'FacebookFrame')} className="btn btn-dark btn-block">
                 <Icon style={{ fontSize: "30px" }} type="facebook" /> <br></br>
                 Facebook
               </button>
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
-              <button className="btn btn-dark btn-block">
+              <button onClick={()=>this.addWidget(<LinkedInFrame />, 'LinkedInFrame')} className="btn btn-dark btn-block">
                 <Icon style={{ fontSize: "30px" }} type="menu-fold" type="linkedin" />
                 <br></br>
                 LinkedIn
@@ -138,7 +144,7 @@ class WidegetBox extends Component {
               </button>
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
-              <button className="btn btn-dark btn-block">
+              <button onClick={()=>this.addWidget(<YoutubeFrame />, 'YoutubeFrame')} className="btn btn-dark btn-block">
                 <Icon style={{ fontSize: "30px" }} type="menu-fold" type="youtube" />
                 <br></br>
                 Youtube
@@ -147,7 +153,7 @@ class WidegetBox extends Component {
           </div>
           <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
-              <button className="btn btn-dark btn-block">
+              <button onClick={()=>this.addWidget(<GoogleFrame/>, 'GoogleFrame')} className="btn btn-dark btn-block">
                 <icon style={{ fontSize: "30px" }} className="fa fa-map-marker" /> <br></br>
                 Map
               </button>
