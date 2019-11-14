@@ -16,7 +16,8 @@
     "react-highcharts": "^16.1.0",
     "react-resizable": "^1.9.0",
     "react-rnd": "^10.1.1",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "recharts": "^1.8.5"
   },
   "scripts": {
     "start": "react-scripts start",

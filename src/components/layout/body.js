@@ -35,7 +35,7 @@ class Body extends Component {
       display: "flex",
       // alignItems: "center",
       // justifyContent: "center"
-      // border: "solid 1px #ddd"
+      border: "solid 1px black"
       // background: "#f0f0f0"
     };
     console.log(this.state, "stateee")

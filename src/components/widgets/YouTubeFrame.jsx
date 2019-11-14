@@ -6,7 +6,7 @@ const { Meta } = Card;
 class YoutubeFrame extends Component {
 
     render() {
-        var style = { border: "none", margin:"2vh", overflow: "hidden", position: "relative", zIndex: "-1", width: "100%", height: "100%" }
+        var style = { border: "none", padding:"2vh", overflow: "hidden", position: "relative", zIndex: "-1", width: "100%", height: "100%" }
         return (
             <React.Fragment>
                 <iframe style={style}

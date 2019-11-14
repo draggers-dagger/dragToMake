@@ -6,9 +6,9 @@ const { Meta } = Card;
 class TwitterFrame extends Component {
 
     render() {
-        var style = { border: "none", overflow: "hidden", position: "relative", zIndex: "-1", width: 300, height: "500px" }
+        var style = { border: "solid", padding:"2vh", width:"100%", overflow: "hidden", zIndex: "-1" }
         return (
-            <React.Fragment>
+            <React.Fragment style={{ margin:"2vh",}}>
                 <iframe style={style}
                     src="https://twitframe.com/show?url=https://twitter.com/Dell/status/1192962006925623301"></iframe>
             </React.Fragment>
