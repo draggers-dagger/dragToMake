@@ -6,7 +6,7 @@ class ConsoleWidget extends Component {
         this.props.handleDeleteWidget(this.props.Widget)
     }
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         return (
             <div style={{color:"white"}} class="item">
                 {this.props.Widget.type}

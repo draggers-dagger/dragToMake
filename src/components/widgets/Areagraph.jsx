@@ -77,8 +77,14 @@ class Areagraph extends Component {
             }]
         }
         return (
-            <React.Fragment>
-                <ReactHighcharts config={configStoreDivison} ref="chart"></ReactHighcharts>
+            <React.Fragment 
+            // style={{
+
+            //     float: "left",
+            //     width:"50%",
+            //     height: "50%"}}
+                 >
+                <ReactHighcharts style={{  width:"100%" , height:"100%"}} config={configStoreDivison} ref="chart"></ReactHighcharts>
             </React.Fragment>
 
         )

@@ -4,26 +4,27 @@ import { Carousel } from 'antd';
 
 class Slideshow extends Component {
 
-    render() {
-        return (
-            <React.Fragment>
-                <Carousel autoplay>
-                    <div>
-                        <img width="100%" height="100%" style={{ zIndex: "-1", position: 'relative' }} src="https://i.dell.com/sites/csimages/Banner_Imagery/all/2337-hub-banner-2800x839-Serenity.jpg" ></img>
-                    </div>
-                    <div>
-                        <img width="100%" height="100%" style={{ zIndex: "-1" }} src="https://i.dell.com/sites/csimages/Merchandizing_Imagery/all/2354-g3-code-vein-2800x839.jpg" ></img>
-                    </div>
-                    <div>
-                        <img width="100%" height="100%" style={{ zIndex: "-1" }} src="https://i.dell.com/sites/csimages/Merchandizing_Imagery/all/2361-awaurorar9-2800x839.jpg" ></img>
-                    </div>
-                    {/* <div>
-                        <h3>4</h3>
-                    </div> */}
-                </Carousel>
-            </React.Fragment>
-
-        )
+  render() {
+    var style = {
+      width: "100%",
+      height: "100%"
     }
+    return (
+      // <div style={{height:"100%", width:"100%"}}>
+      <Carousel style={{ height: "auto", width: "80vw" }} autoplay>
+        <div>
+          <img style={style} src="https://i.dell.com/sites/csimages/Banner_Imagery/en/in-dhs-pc-exch-965x220.jpg" />
+        </div>
+        <div>
+        <img style={style} src="https://infomeuae.com/wp-content/uploads/2017/02/dell-banner-1.jpg" />
+        </div>
+        <div>
+        <img style={style} src="https://blog.pcm.com/wp-content/uploads/2018/06/Dell-blog-banner.jpg" />
+        </div>
+      </Carousel>
+      // </div>
+
+    )
+  }
 }
 export default Slideshow

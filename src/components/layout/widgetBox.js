@@ -16,7 +16,6 @@ import TwitterFrame from '../widgets/Twitter'
 import GoogleFrame from '../widgets/Map'
 class WidegetBox extends Component {
   addWidget = (component, type)=>{
-    console.log(component)
     this.props.widget(component, type)
   }
   render() {
@@ -25,7 +24,7 @@ class WidegetBox extends Component {
             <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
               <h4 >
-                Widgets
+                WIDGETS
               </h4>
             </div>
           </div>

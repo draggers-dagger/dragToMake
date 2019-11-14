@@ -10,7 +10,7 @@ class Footer extends Component {
         return (
             <React.Fragment >
 
-<footer style={{backgroundColor: '#007db8'}} class="page-footer font-small blue">
+<footer style={{backgroundColor: '#007db8', height:"100%" ,width:"100%"}} class="page-footer font-small blue">
 
 <div class="footer-copyright text-center py-3">© 2018 Copyright:
   {/* <a style={{textColo}} href="https://mdbootstrap.com/education/bootstrap/">  */}
