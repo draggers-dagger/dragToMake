@@ -27,11 +27,11 @@ npm start
 
 The project was started on 5th November 2019 with a large plan. Although we haven't covered much yet but if we separate the project into different phases we will get to know that 3/7 phases are completed.
 
- - [*] Create a UI that allows widget to move around the playground.
+ - [x] Create a UI that allows widget to move around the playground.
 
- - [*] Create a UI that allows widget to get resized (Still some issues left).
+ - [x] Create a UI that allows widget to get resized (Still some issues left).
 
- - [*] Recommendation chat bot
+ - [x] Recommendation chat bot
 
  - [ ] Write test case for the website as it will be made open source
 
