@@ -25,7 +25,7 @@ npm start
 
 ## Plans
 
-The project was started on 5th November 2019 with a large plan. Although we haven't covered much yet but if we separate the project into different phases we will get to know that 3/7 phases are completed.
+The project was started on 5th November 2019 with a large plan. Although we haven't covered much yet but if we separate the project into different phases we will get to know that 3/8 phases are completed.
 
  - [x] Create a UI that allows widget to move around the playground.
 
