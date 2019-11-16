@@ -32,6 +32,8 @@ The project was started on 5th November 2019 with a large plan. Although we have
  - [x] Create a UI that allows widget to get resized (Still some issues left).
 
  - [x] Recommendation chat bot
+ 
+ - [ ] Create export file and template for the user (WIP).
 
  - [ ] Write test case for the website as it will be made open source
 
