@@ -4,20 +4,7 @@ A website in which user can select widgets frag them to desired position and get
 
 ## Installation
 
-The project is currently divided into 3 repositories.
-* 1st repository used to create website
 
-```bash
-npm install
-npm start
-```
-
-* 2nd repository is the server side of the 1st repository
-```bash
-npm install
-node app.js
-```
-* 3rd repository is the template in which user will add the json file received while building the site using 1st repository
 ```bash
 npm install
 npm start
