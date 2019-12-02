@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Rnd } from "react-rnd";
 import update from 'immutability-helper'
+
 class Body extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +36,7 @@ class Body extends Component {
       display: "flex",
       // alignItems: "center",
       // justifyContent: "center"
-      border: "solid 1px black"
+      // border: "solid 1px black"
       // background: "#f0f0f0"
     };
     console.log(this.state, "stateee")
@@ -86,8 +87,6 @@ class Body extends Component {
             >
               {title}
             </Rnd>
-
-
           )
         })}
         {/* </div> */}

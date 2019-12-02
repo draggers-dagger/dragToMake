@@ -16,20 +16,19 @@ class App extends Component {
   }
 
   handleExport = () => {
-    console.log(this.state.AllWidget)
     var componentArray = this.state.AllWidget.forEach(function(v){ delete v.title });
     var postData = {
       componentsArray: this.state.AllWidget
     }
-    console.log(postData,"arrrsy")
-    axios.post('http://localhost:8080/add', postData)
-      .then(res => {
-        console.log(res, "resssssss")
-        message.success('Webpage expoted successfully');
-      })
-      .catch(err => {
-        console.log(err)
-      })
+    message.info("No export link")
+    // axios.post('http://localhost:8080/add', postData)
+    //   .then(res => {
+    //     console.log(res, "resssssss")
+    //     message.success('Webpage expoted successfully');
+    //   })
+    //   .catch(err => {
+    //     console.log(err)
+    //   })
   }
 
   handleCurrentWidget = (data, type) => {
@@ -39,19 +38,16 @@ class App extends Component {
     })
   }
   handleAllWidget = async (data) => {
-    console.log(data, "hehehehhehhehh")
     await this.setState({
       AllWidget: data,
       WidgetLength: data.length
     })
-    // console.log(this.state.AllWidget)
   }
   handleDeleteWidget = async (data) => {
     console.log(data);
     await this.setState({
       deleteWidget: data
     })
-    console.log(this.state.deleteWidget)
   }
   render() {
     return (
