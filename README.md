@@ -1,6 +1,6 @@
 # Drag To Make
 
-A website in which user can select widgets frag them to desired position and get their whole website ready for deployment.
+A website in which user can select widgets drag them to desired position and get the whole website ready for deployment.
 This repository depends on 2 more repositories that are part of this organization.
 
 ## Installation
