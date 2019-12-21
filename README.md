@@ -1,6 +1,6 @@
 # Drag To Make
 
-A website in which user can select widgets drag them to desired position and get the whole website ready for deployment.
+A website in which user can select widgets, drag them to desired position and get the whole website ready for deployment.
 This repository depends on 2 more repositories that are part of this organization.
 
 ## Installation
@@ -33,7 +33,7 @@ The project was started on 5th November 2019 with a large plan. Although we have
 
  
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Pull requests are welcome. For major changes, please open an issue first to discuss what would you like to change.
 
 Try to solve 2 beginner issues before starting with any major issues.
 
