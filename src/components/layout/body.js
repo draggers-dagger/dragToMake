@@ -1,14 +1,33 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
 import { Rnd } from "react-rnd";
 import update from 'immutability-helper'
-
+import ContentEditable from "react-contenteditable";
+import {
+  editHeading
+} from '../../actions/edit_heading'
 class Body extends Component {
   constructor(props) {
     super(props);
     this.state = {
       boxesArray: [],
+       html: "Edit <b>me</b> <i>Pranay</i> !"
     }
   }
+  handleChange = evt => {
+    this.setState({ html: evt.target.value });
+    console.log(this.state.html)
+};
+
+handleOnFocus = e => {
+  console.log("focusinggg")
+  this.props.editHeading(true)
+}
+
+handleOnBlur = e => {
+  console.log("bluring")
+  this.props.editHeading(false)
+}
 
   async componentDidUpdate(prevProps) {
     if (prevProps.widget !== this.props.widget) {
@@ -39,7 +58,7 @@ class Body extends Component {
       // border: "solid 1px black"
       // background: "#f0f0f0"
     };
-    console.log(this.state, "stateee")
+    // console.log(this.state, "stateee")
     return (
       <div className="container-fluid" style={{ marginTop: "3%", height: "300%", border: "solid", overflowY: "scroll", overflowX: "hidden" }}>
         {/* <div className="container-fluid" style={{ height: "200%" }}> */}
@@ -86,13 +105,29 @@ class Body extends Component {
               }}
             >
               {title}
+              
             </Rnd>
+            
           )
         })}
         {/* </div> */}
+        <ContentEditable
+                        html={this.state.html} // innerHTML of the editable div
+                        disabled={false} // use true to disable edition
+                        onChange={this.handleChange} // handle innerHTML change
+                        ref={this.textInput}
+                        onFocus={this.handleOnFocus}
+                        onBlur={this.handleOnBlur}
+                    />
       </div>
     )
   }
 }
 
-export default Body
+const mapStateToProps = state => ({
+  edit_heading: state.editHeading
+})
+
+export default connect(mapStateToProps, {
+  editHeading
+})(Body)

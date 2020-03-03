@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Icon, Button } from 'antd'
+// import { Icon, Button } from 'antd'
 import Piechart from '../widgets/piechart'
 import Areagraph from '../widgets/Areagraph'
 import Bargraph from '../widgets/Bargraph'
@@ -14,6 +14,7 @@ import YoutubeFrame from '../widgets/YouTubeFrame'
 import Footer from '../widgets/Footer'
 import TwitterFrame from '../widgets/Twitter'
 import GoogleFrame from '../widgets/Map'
+import Heading from '../widgets/Heading'
 class WidegetBox extends Component {
   addWidget = (component, type)=>{
     this.props.widget(component, type)
@@ -31,13 +32,13 @@ class WidegetBox extends Component {
           <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
               <button onClick={()=>this.addWidget(<Navbar/>, 'Navbar')} className="btn btn-dark btn-block">
-                <icon style={{ fontSize: "30px" }} className="fa fa-navicon" /> <br></br>
+                {/* <icon style={{ fontSize: "30px" }} className="fa fa-navicon" /> <br></br> */}
                 Nav Bar
               </button>
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
               <button onClick={()=>this.addWidget(<Card />, 'Card')} className="btn btn-dark btn-block">
-                <Icon style={{ fontSize: "30px" }} type="menu-fold" type="idcard" />
+                {/* <Icon style={{ fontSize: "30px" }} type="menu-fold" type="idcard" /> */}
                 <br></br>
                 Card
               </button>
@@ -46,13 +47,13 @@ class WidegetBox extends Component {
           <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
               <button onClick={()=>this.addWidget(<Piechart />, 'Piechart')} className="btn btn-dark btn-block">
-                <Icon style={{ fontSize: "30px" }} type="pie-chart" /> <br></br>
+                {/* <Icon style={{ fontSize: "30px" }} type="pie-chart" /> <br></br> */}
                 Pie Chart
               </button>
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
               <button onClick={()=>this.addWidget(<Bargraph />, 'Bargraph')} className="btn btn-dark btn-block">
-                <Icon style={{ fontSize: "30px" }} type="menu-fold" type="bar-chart" />
+                {/* <Icon style={{ fontSize: "30px" }} type="menu-fold" type="bar-chart" /> */}
                 <br></br>
                 Bar chart
               </button>
@@ -61,13 +62,13 @@ class WidegetBox extends Component {
           <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
               <button onClick={()=>this.addWidget(<Areagraph />, 'Areagraph')} className="btn btn-dark btn-block">
-              <Icon style={{ fontSize: "30px" }} type="dot-chart" />  <br></br>
+              {/* <Icon style={{ fontSize: "30px" }} type="dot-chart" />  <br></br> */}
                 Dot chart
               </button>
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
               <button onClick={()=>this.addWidget(<Tag />, 'Tag')} className="btn btn-dark btn-block">
-                <Icon style={{ fontSize: "30px" }} type="tag" />
+                {/* <Icon style={{ fontSize: "30px" }} type="tag" /> */}
                 <br></br>
                 Color Tag
               </button>
@@ -83,7 +84,7 @@ class WidegetBox extends Component {
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
               <button onClick={()=>this.addWidget(<Carousel/>, 'Carousel')} className="btn btn-dark btn-block">
-                <Icon style={{ fontSize: "30px" }}  type="desktop" />
+                {/* <Icon style={{ fontSize: "30px" }}  type="desktop" /> */}
                 <br></br>
                   Carousel
               </button>
@@ -91,7 +92,7 @@ class WidegetBox extends Component {
           </div>
           <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
-              <button className="btn btn-dark btn-block">
+              <button  onClick={()=>this.addWidget(<Heading/>, 'Heading')} className="btn btn-dark btn-block">
                 <icon style={{ fontSize: "30px" }} className="fa fa-header"/>
                 <br></br>
                 Heading
@@ -99,7 +100,7 @@ class WidegetBox extends Component {
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
               <button className="btn btn-dark btn-block">
-                <Icon style={{ fontSize: "30px" }}  type="desktop" />
+                {/* <Icon style={{ fontSize: "30px" }}  type="desktop" /> */}
                 <br></br>
                 I Frame
               </button>
@@ -108,13 +109,13 @@ class WidegetBox extends Component {
           <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
               <button onClick={()=>this.addWidget(<Footer/>, 'Footer')} className="btn btn-dark btn-block">
-                <Icon style={{ fontSize: "30px" }} type="border" /> <br></br>
+                {/* <Icon style={{ fontSize: "30px" }} type="border" /> <br></br> */}
                 Footer
               </button>
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
               <button onClick={()=>this.addWidget(<TwitterFrame/>, 'TwitterFrame')} className="btn btn-dark btn-block">
-                <Icon style={{ fontSize: "30px" }} type="menu-fold" type="twitter" />
+                {/* <Icon style={{ fontSize: "30px" }} type="menu-fold" type="twitter" /> */}
                 <br></br>
                 Twitter
               </button>
@@ -123,13 +124,13 @@ class WidegetBox extends Component {
           <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
               <button onClick={()=>this.addWidget(<FacebookFrame />, 'FacebookFrame')} className="btn btn-dark btn-block">
-                <Icon style={{ fontSize: "30px" }} type="facebook" /> <br></br>
+                {/* <Icon style={{ fontSize: "30px" }} type="facebook" /> <br></br> */}
                 Facebook
               </button>
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
               <button onClick={()=>this.addWidget(<LinkedInFrame />, 'LinkedInFrame')} className="btn btn-dark btn-block">
-                <Icon style={{ fontSize: "30px" }} type="menu-fold" type="linkedin" />
+                {/* <Icon style={{ fontSize: "30px" }} type="menu-fold" type="linkedin" /> */}
                 <br></br>
                 LinkedIn
               </button>
@@ -138,13 +139,13 @@ class WidegetBox extends Component {
           <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
               <button className="btn btn-dark btn-block">
-                <Icon style={{ fontSize: "30px" }} type="github" /> <br></br>
+                {/* <Icon style={{ fontSize: "30px" }} type="github" /> <br></br> */}
                 github
               </button>
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
               <button onClick={()=>this.addWidget(<YoutubeFrame />, 'YoutubeFrame')} className="btn btn-dark btn-block">
-                <Icon style={{ fontSize: "30px" }} type="menu-fold" type="youtube" />
+                {/* <Icon style={{ fontSize: "30px" }} type="menu-fold" type="youtube" /> */}
                 <br></br>
                 Youtube
               </button>
@@ -189,7 +190,7 @@ class WidegetBox extends Component {
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
               <button className="btn btn-dark btn-block">
-                <Icon style={{ fontSize: "30px" }} type="menu-fold" type="idcard" />
+                // <Icon style={{ fontSize: "30px" }} type="menu-fold" type="idcard" />
                 <br></br>
                 Card
               </button>
@@ -198,13 +199,13 @@ class WidegetBox extends Component {
           {/* <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
               <button className="btn btn-dark btn-block">
-                <Icon style={{ fontSize: "30px" }} type="menu-fold" /> <br></br>
+                // <Icon style={{ fontSize: "30px" }} type="menu-fold" /> <br></br>
                 Nav Bar
               </button>
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
               <button className="btn btn-dark btn-block">
-                <Icon style={{ fontSize: "30px" }} type="menu-fold" type="idcard" />
+                // <Icon style={{ fontSize: "30px" }} type="menu-fold" type="idcard" />
                 <br></br>
                 Card
               </button>
@@ -213,13 +214,13 @@ class WidegetBox extends Component {
           {/* <div className="row">
             <div style={{ textAlign: "center", marginTop: "20px", borderStyle: "solid", borderLeft: "None", borderTop: "none", borderBottom: "none" }} className="col">
               <button className="btn btn-dark btn-block">
-                <Icon style={{ fontSize: "30px" }} type="menu-fold" /> <br></br>
+                // <Icon style={{ fontSize: "30px" }} type="menu-fold" /> <br></br>
                 Nav Bar
               </button>
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }} className="col">
               <button className="btn btn-dark btn-block">
-                <Icon style={{ fontSize: "30px" }} type="menu-fold" type="idcard" />
+                // <Icon style={{ fontSize: "30px" }} type="menu-fold" type="idcard" />
                 <br></br>
                 Card
               </button>
