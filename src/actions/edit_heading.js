@@ -2,11 +2,11 @@ import {
     EDIT_HEADING
 } from './types'
 
-export const editHeading = (isEdit) => {
-    return {
+export const editHeading = (isEdit) => dispatch => {
+    dispatch ({
         type: EDIT_HEADING,
         payload: {
             isEdit
         }
-    }
+    })
 }

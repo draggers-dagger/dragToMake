@@ -19,7 +19,7 @@ class App extends Component {
   };
 
   handleExport = () => {
-    var componentArray = this.state.AllWidget.forEach(function(v) {
+    var componentArray = this.state.AllWidget.forEach(function (v) {
       delete v.title;
     });
     var postData = {

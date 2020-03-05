@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-// import { Icon, Button } from 'antd'
-// import Edit from '../widgets/Modal'
+import { Icon, Button } from 'antd'
+import EditingModal from './Modal' 
+import { EditOutlined, DeleteOutlined  } from '@ant-design/icons';
 class ConsoleWidget extends Component {
     handleDelete =()=>{
         this.props.handleDeleteWidget(this.props.Widget)
@@ -11,9 +12,12 @@ class ConsoleWidget extends Component {
             <div style={{color:"white"}} class="item">
                 {this.props.Widget.type}
                 <br></br>
-                <Edit/>
+                {/* <Edit/> */}
                 {/* <Icon style={{ pointer: "cursor" }} type="edit" /> &nbsp;
                 <Icon onClick={this.handleDelete} type="delete" /> &nbsp; */}
+                {/* <Button onClick={this.handleDelete} icon={<SmileTwoTone  />} /> */}
+                <EditingModal  />
+                <DeleteOutlined  onClick={this.handleDelete}/>
             </div>
         )
     }
