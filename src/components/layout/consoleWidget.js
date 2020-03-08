@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Icon, Button } from 'antd'
 import EditingModal from './Modal' 
+import CardEdit from '../EditComponents/Card.edit'
 import { EditOutlined, DeleteOutlined  } from '@ant-design/icons';
 class ConsoleWidget extends Component {
     handleDelete =()=>{
@@ -16,7 +17,9 @@ class ConsoleWidget extends Component {
                 {/* <Icon style={{ pointer: "cursor" }} type="edit" /> &nbsp;
                 <Icon onClick={this.handleDelete} type="delete" /> &nbsp; */}
                 {/* <Button onClick={this.handleDelete} icon={<SmileTwoTone  />} /> */}
-                <EditingModal  />
+                <EditingModal
+                    form={<CardEdit/>}
+                />
                 <DeleteOutlined  onClick={this.handleDelete}/>
             </div>
         )

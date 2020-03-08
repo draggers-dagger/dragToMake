@@ -41,9 +41,9 @@ class Body extends Component {
     if (prevProps.widget !== this.props.widget) {
       const id = Date.now()
       this.props.addNewWidget(this.props.type, {left:0, top:0}, {width: "auto", height: "auto"})
-      // await this.setState({
-      //   boxesArray: [...this.state.boxesArray, { id: id, type: this.props.type, left: 0, top: 0 }]
-      // }, () => this.props.handleAllWidget(this.state.boxesArray))
+      await this.setState({
+        boxesArray: [...this.state.boxesArray, { id: id, type: this.props.type, left: 0, top: 0 }]
+      }, () => this.props.handleAllWidget(this.state.boxesArray))
     }
     if (prevProps.deleteWidget !== this.props.deleteWidget) {
       console.log(this.props.deleteWidget.id)
@@ -78,30 +78,30 @@ class Body extends Component {
                 height: "auto"
               }}
               onDragStop={(e, d) => {
-                {/* var objIndex = this.state.boxesArray.findIndex((obj => obj.id == id)) */}
+                var objIndex = this.state.boxesArray.findIndex((obj => obj.id == id))
                 this.props.updateWidgetPosition(id, {x: d.x, y: d.y})
-                {/* this.setState({
+                this.setState({
                   boxesArray: update(this.state.boxesArray, {
                     [objIndex]: {
                       left: { $set: d.x },
                       top: { $set: d.y }
                     }
                   })
-                }) */}
+                })
                 this.props.handleAllWidget(this.state.boxesArray)
                 this.setState({ x: d.x, y: d.y });
               }}
               onResize={(e, direction, ref, delta, position) => {
-                {/* var objIndex = this.state.boxesArray.findIndex((obj => obj.id == id)) */}
+                var objIndex = this.state.boxesArray.findIndex((obj => obj.id == id))
                 this.props.updateWidgetSize(id, {offsetWidth: ref.offsetWidth, offsetHeight: ref.offsetHeight})
-                {/* this.setState({
+                this.setState({
                   boxesArray: update(this.state.boxesArray, {
                     [objIndex]: {
                       width: { $set: ref.offsetWidth },
                       height: { $set: ref.offsetHeight }
                     }
                   })
-                }) */}
+                })
                 this.props.handleAllWidget(this.state.boxesArray)
                 this.setState({
                   width: ref.offsetWidth,
