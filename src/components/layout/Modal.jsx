@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Modal, Button, Icon } from "antd";
 import { EditOutlined } from '@ant-design/icons';
+import EditForm from "../EditComponents/Renderedfrom"
 
 class Modal1 extends React.Component {
   state = { visible: false };
@@ -36,13 +37,12 @@ class Modal1 extends React.Component {
         {/* <Icon onClick={this.showModal} style={{ pointer: "cursor" }} type="edit" /> */}
         <Modal
           title="Basic Modal"
+          width={800}
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
         >
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-          <p>Some contents...</p>
+         <EditForm/>
         </Modal>
       </div>
     );

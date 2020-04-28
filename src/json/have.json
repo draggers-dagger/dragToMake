@@ -1,0 +1,26 @@
+[
+    {
+        "widgetID": "1587836729615",
+        "type": "Card",
+        "position": {
+            "left": "",
+            "right": ""
+        },
+        "size": {
+            "width": "",
+            "height": ""
+        }
+    },
+    {
+        "widgetID": "1587836729615",
+        "type": "Navbar",
+        "position": {
+            "left": "",
+            "right": ""
+        },
+        "size": {
+            "width": "",
+            "height": ""
+        }
+    }
+]
