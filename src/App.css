@@ -1,8 +1,14 @@
+.edit-form-left-panel{
+  border-style: "none solid";
+  height: "98vh";
+  padding-left: "25px";
+}
+
+
 .btn {
   min-width: 100px;
   color:white;
 }
-
 
 .highcharts-container {
   z-index: -1 !important ;

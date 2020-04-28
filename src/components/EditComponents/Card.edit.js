@@ -1,61 +1,100 @@
-// import React, { Component } from "react";
-// import { EditOutlined } from "@ant-design/icons";
-// import { Form, Input, Button, Checkbox } from "antd";
-// // class Modal1 extends React.Component {
+import React, { Component } from "react";
+import { Form, Input, Button } from "antd";
+import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
 
-// const layout = {
-//   labelCol: { span: 8 },
-//   wrapperCol: { span: 16 }
-// };
-// const tailLayout = {
-//   wrapperCol: { offset: 8, span: 16 }
-// };
+const formItemLayout = {
+  labelCol: {
+    xs: { span: 24 },
+    sm: { span: 4 },
+  },
+  wrapperCol: {
+    xs: { span: 24 },
+    sm: { span: 20 },
+  },
+};
+const formItemLayoutWithOutLabel = {
+  wrapperCol: {
+    xs: { span: 24, offset: 0 },
+    sm: { span: 20, offset: 4 },
+  },
+};
 
-// class CardEdit extends React.Component {
-//   onFinish = values => {
-//     console.log("Success:", values);
-//   };
+const DynamicFieldSet = () => {
+  const onFinish = (values) => {
+    console.log("Received values of form:", values);
+  };
 
-//   onFinishFailed = errorInfo => {
-//     console.log("Failed:", errorInfo);
-//   };
-//   render() {
-//     return (
-//       <Form
-//         {...layout}
-//         name="basic"
-//         initialValues={{ remember: true }}
-//         onFinish={onFinish}
-//         onFinishFailed={onFinishFailed}
-//       >
-//         <Form.Item
-//           label="Username"
-//           name="username"
-//           rules={[{ required: true, message: "Please input your username!" }]}
-//         >
-//           <Input />
-//         </Form.Item>
+  return (
+    <Form
+      name="dynamic_form_item"
+      {...formItemLayoutWithOutLabel}
+      onFinish={onFinish}
+    >
+      <Form.List name="names">
+        {(fields, { add, remove }) => {
+          return (
+            <div>
+              {fields.map((field, index) => (
+                <Form.Item
+                  {...(index === 0
+                    ? formItemLayout
+                    : formItemLayoutWithOutLabel)}
+                  label={index === 0 ? "Passengers" : ""}
+                  required={false}
+                  key={field.key}
+                >
+                  <Form.Item
+                    {...field}
+                    validateTrigger={["onChange", "onBlur"]}
+                    rules={[
+                      {
+                        required: true,
+                        whitespace: true,
+                        message:
+                          "Please input passenger's name or delete this field.",
+                      },
+                    ]}
+                    noStyle
+                  >
+                    <Input
+                      placeholder="passenger name"
+                      style={{ width: "60%" }}
+                    />
+                  </Form.Item>
+                  {fields.length > 1 ? (
+                    <MinusCircleOutlined
+                      className="dynamic-delete-button"
+                      style={{ margin: "0 8px" }}
+                      onClick={() => {
+                        remove(field.name);
+                      }}
+                    />
+                  ) : null}
+                </Form.Item>
+              ))}
+              <Form.Item>
+                <Button
+                  type="dashed"
+                  onClick={() => {
+                    add();
+                  }}
+                  style={{ width: "60%" }}
+                >
+                  <PlusOutlined /> Add field
+                </Button>
+              </Form.Item>
+            </div>
+          );
+        }}
+      </Form.List>
 
-//         <Form.Item
-//           label="Password"
-//           name="password"
-//           rules={[{ required: true, message: "Please input your password!" }]}
-//         >
-//           <Input.Password />
-//         </Form.Item>
+      <Form.Item>
+        <Button type="primary" htmlType="submit">
+          Submit
+        </Button>
+      </Form.Item>
+    </Form>
+  );
+};
 
-//         <Form.Item {...tailLayout} name="remember" valuePropName="checked">
-//           <Checkbox>Remember me</Checkbox>
-//         </Form.Item>
-
-//         <Form.Item {...tailLayout}>
-//           <Button type="primary" htmlType="submit">
-//             Submit
-//           </Button>
-//         </Form.Item>
-//       </Form>
-//     );
-//   }
-// }
-
-// export default CardEdit;
+export default DynamicFieldSet;

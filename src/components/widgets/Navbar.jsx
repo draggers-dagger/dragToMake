@@ -4,7 +4,6 @@ import { Icon, Card, Row, Col } from 'antd';
 const ReactHighcharts = require('react-highcharts');
 const { Meta } = Card;
 class Navbar extends Component {
-
   render() {
     return (
       <div style={{ height:"100%" ,width:"100%"}}>

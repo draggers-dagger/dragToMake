@@ -1,0 +1,22 @@
+{
+    "Card": {
+        "position": {
+            "left": "",
+            "right": ""
+        },
+        "size": {
+            "width": "",
+            "height": ""
+        }
+    }, 
+    "Navbaar": {
+        "position": {
+            "left": "",
+            "right": ""
+        },
+        "size": {
+            "width": "",
+            "height": ""
+        }
+    }
+}
